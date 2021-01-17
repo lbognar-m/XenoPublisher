@@ -1,0 +1,9 @@
+FUNCTIONS:
+pluggable (can be declared before, thus overridden)
+ex:
+include(overrides.php); <-- here goes the functions to override
+if ( ! function_exists( 'theme_special_feature' ) ) {
+	function theme_special_feature() {
+	//  Do something.
+	}
+}

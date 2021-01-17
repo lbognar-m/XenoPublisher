@@ -1,0 +1,69 @@
+www non www redirect
+paginated query like wordpress
+import export pods menus settings etc
+plugin, theme and core automatic update with cron, button, and ability to search them from the admin.
+form builder with
+	upload
+	captcha
+	extendible
+	ajax submission
+content moderation and workflow
+string translation
+import export
+	content
+	field sets
+	forms
+	paths
+	menus
+	users
+	settings
+taxonomy
+search for a file or list all files to include
+
+log events
+	404 log the url, ip, date
+	403
+
+
+PAGE LIFETIME
+	Xeno
+		-	instantiate all general classes
+			-	hook: prepare the hooks for use
+			-	route: get a usable query string from the url
+			-	user: generate user data if logged in, else do nothing
+	decide which files to load for the page
+
+	include or require neede files (to load all modifiers, list all hooks, add any variables needed for use.
+	EVERYTHING needed later should be added to thr Xeno class
+
+	generate the user
+	generate page data object
+	
+	LOAD every plugin and theme functions and overrides
+	
+	run hooks on data objects
+
+
+
+
+functions
+insert/update permissions on delete delete from role permissions also
+insert/update roles if exists leave permissions alone, on delete delete from role permissions also
+set permission for a role
+get permission for a role
+get permissions for a user
+get roles for a user
+
+plugins/themes
+
+init.php
+	add permissions
+	add custom url's
+?	register new widget types
+	add new widgets
+
+plugin.php
+	add new hooks
+	add new filters
+	register widget types
+	register new content types

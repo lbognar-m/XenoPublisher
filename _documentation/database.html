@@ -1,0 +1,1099 @@
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<link href="http://meekro.com/blueprint/screen.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPhp.js" type="text/javascript"></script>
+<!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['auto-links'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+  </script>
+
+<h1 class="alt">Documentation</h1>
+<P>If you're trying to get started for the first time,
+read the <a href="/quickstart.php">Quick Start Guide</a> first!</P>
+
+<table>
+  <tr>
+          <th>Variables</th>
+          <th>Query</th>
+          <th>Regarding Last Query</th>
+          <th>Other</th>
+      </tr>
+
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$user</a>
+      </td>
+          <td>
+        <a href='#anchor_query'>DB::query()</a>
+      </td>
+          <td>
+        <a href='#anchor_insertid'>DB::insertId()</a>
+      </td>
+          <td>
+        <a href='#anchor_debugmode'>DB::debugMode()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$password</a>
+      </td>
+          <td>
+        <a href='#anchor_queryfirstrow'>DB::queryFirstRow()</a>
+      </td>
+          <td>
+        <a href='#anchor_count'>DB::count()</a>
+      </td>
+          <td>
+        <a href='#anchor_usedb'>DB::useDB()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$dbName</a>
+      </td>
+          <td>
+        <a href='#anchor_queryfirstlist'>DB::queryFirstList()</a>
+      </td>
+          <td>
+        <a href='#anchor_affectedrows'>DB::affectedRows()</a>
+      </td>
+          <td>
+        <a href='#anchor_transaction'>DB::startTransaction()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$host</a>
+      </td>
+          <td>
+        <a href='#anchor_queryfirstcolumn'>DB::queryFirstColumn()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_transaction'>DB::commit()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$port</a>
+      </td>
+          <td>
+        <a href='#anchor_queryonecolumn'>DB::queryOneColumn()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_transaction'>DB::rollback()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_variables'>DB::$encoding</a>
+      </td>
+          <td>
+        <a href='#anchor_queryfirstfield'>DB::queryFirstField()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_tablelist'>DB::tableList()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_special_variables'>DB::$ssl</a>
+      </td>
+          <td>
+        <a href='#anchor_queryonefield'>DB::queryOneField()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_columnlist'>DB::columnList()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_special_variables'>DB::$connect_options</a>
+      </td>
+          <td>
+        <a href='#anchor_queryfullcolumns'>DB::queryFullColumns()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_disconnect'>DB::disconnect()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_error_handler'>DB::$error_handler</a>
+      </td>
+          <td>
+        <a href='#anchor_queryraw'>DB::queryRaw()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_get'>DB::get()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_throw_exception_on_error'>DB::$throw_exception_on_error</a>
+      </td>
+          <td>
+        <a href='#anchor_insert'>DB::insert()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_whereclause'>new WhereClause()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_nonsql_error_handler'>DB::$nonsql_error_handler</a>
+      </td>
+          <td>
+        <a href='#anchor_insertignore'>DB::insertIgnore()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_meekrodb'>new MeekroDB()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_throw_exception_on_nonsql_error'>DB::$throw_exception_on_nonsql_error</a>
+      </td>
+          <td>
+        <a href='#anchor_insertupdate'>DB::insertUpdate()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_verticalslice'>DBHelper::verticalSlice()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_success_handler'>DB::$success_handler</a>
+      </td>
+          <td>
+        <a href='#anchor_insert'>DB::replace()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#anchor_reindex'>DBHelper::reIndex()</a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_param_char'>DB::$param_char</a>
+      </td>
+          <td>
+        <a href='#anchor_update'>DB::update()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_usenull'>DB::$usenull</a>
+      </td>
+          <td>
+        <a href='#anchor_delete'>DB::delete()</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+      </tr>
+    <tr>
+          <td>
+        <a href='#anchor_nested_transactions'>DB::$nested_transactions</a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+          <td>
+        <a href='#'></a>
+      </td>
+      </tr>
+  </table>
+
+<h2 class="alt" id="anchor_variables">Connection Variables</h2>
+<div class="indent">
+  You must specify the username, password, and database name before running any queries. If you don't specify a host,
+  it defaults to localhost. <B>The database connection won't actually be established until the first time
+  you run a query.</B> This means you can set these variables in a globally included setup file, and never worry about
+  actually opening or closing your database connection.
+  <pre class="brush: php;">
+    DB::$user = 'my_database_user';
+    DB::$password = 'my_database_password';
+    DB::$dbName = 'my_database_name';
+    DB::$host = '123.111.10.23'; //defaults to localhost if omitted
+    DB::$port = '12345'; // defaults to 3306 if omitted
+    DB::$encoding = 'utf8'; // defaults to latin1 if omitted
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_special_variables">Specialized Connection Variables</h2>
+<div class="indent">
+  MeekroDB gives you access to mysqli's <a href="http://www.php.net//manual/en/mysqli.ssl-set.php">ssl_set</a> and 
+  <a href="http://www.php.net/manual/en/mysqli.options.php">options</a> commands. Primarily, you can
+  connect to MySQL over SSL and configure the connection timeout (default is 30 seconds).
+  <pre class="brush: php;">
+    DB::$ssl = array('key' => '', 'cert' => '', 'ca_cert' => '', 'ca_path' => '', 'cipher' => '');
+    DB::$connect_options = array(MYSQLI_OPT_CONNECT_TIMEOUT => 10);
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_error_handler">DB::$error_handler</h2>
+<div class="indent">
+  If a query returns an error, MeekroDB will normally print out some debugging information (error, the query
+  it happened on, and a backtrace) and exit. You can change this behavior by setting your own callback function
+  which will get called on errors. You can set this to false if you don't want any function to be called on
+  errors.
+  
+  <br><br><B>Default:</B> Setting this back to true will restore the default error handler.
+  <pre class="brush: php;">
+    DB::$error_handler = 'my_error_handler';
+    
+    function my_error_handler($params) {
+      echo "Error: " . $params['error'] . "<br>\n";
+      echo "Query: " . $params['query'] . "<br>\n";
+      die; // don't want to keep going if a query broke
+    }
+    
+    // this broken query will cause my_error_handler() to run
+    DB::query("SELCT * FROM accounts"); // misspelled SELECT
+    
+    class Errors {
+      public static function static_error_handler($params) {
+        echo "Error: " . $params['error'] . "<br>\n";
+        echo "Query: " . $params['query'] . "<br>\n";
+        die; // don't want to keep going if a query broke
+      }
+      
+      public function error_handler($params) {
+        echo "Error: " . $params['error'] . "<br>\n";
+        echo "Query: " . $params['query'] . "<br>\n";
+        die; // don't want to keep going if a query broke
+      }
+    }
+    
+    // use a static class method as an error handler
+    DB::$error_handler = array('Errors', 'static_error_handler'); 
+    
+    // use an object method as an error handler
+    $my_object = new Errors();
+    DB::$error_handler = array($my_object, 'error_handler');
+    
+    //restore default error handler
+    DB::$error_handler = true;
+    
+    //ignore errors (BAD IDEA)
+    DB::$error_handler = false;
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_throw_exception_on_error">DB::$throw_exception_on_error</h2>
+<div class="indent">
+  If you set this to true, errors will cause a MeekroDBException to be thrown.
+  <pre class="brush: php;">
+    DB::$error_handler = false; // since we're catching errors, don't need error handler
+    DB::$throw_exception_on_error = true;
+    
+    try {
+      // try to insert something with a primary key that already exists
+      // will cause an exception to get thrown, and we'll catch it
+      DB::insert('accounts', array(
+        'id' => 2, // duplicate primary key 
+        'username' => 'Joe',
+        'password' => 'asd254890s'
+      ));
+    } catch(MeekroDBException $e) {
+      echo "Error: " . $e->getMessage() . "<br>\n"; // something about duplicate keys
+      echo "SQL Query: " . $e->getQuery() . "<br>\n"; // INSERT INTO accounts...
+    }
+    
+    // restore default error handling behavior
+    // don't throw any more exceptions, and die on errors
+    DB::$error_handler = 'meekrodb_error_handler';
+    DB::$throw_exception_on_error = false;
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_nonsql_error_handler">DB::$nonsql_error_handler</h2>
+<div class="indent">
+  Works just like DB::$error_handler, except it gets triggered on non-SQL errors. For example,
+  this will be run to alert you if you mess up the MeekroDB syntax, or if you can't connect
+  to the MySQL server.
+  
+  <br><br><B>Default:</B> null (for the default nonsql error handler)
+</div>
+
+<h2 class="alt" id="anchor_throw_exception_on_nonsql_error">DB::$throw_exception_on_nonsql_error</h2>
+<div class="indent">
+  Works just like DB::$throw_exception_on_error, except it gets triggered on non-SQL errors. For example,
+  this will be run to alert you if you mess up the MeekroDB syntax, or if you can't connect
+  to the MySQL server.
+  
+  <br><br><B>Default:</B> false (don't throw exceptions, instead use the nonsql error handler)
+</div>
+
+<h2 class="alt" id="anchor_success_handler">DB::$success_handler</h2>
+<div class="indent">
+  If set to true, the system will echo a report after each query with the query string and how long it took to run.
+  You can also set a custom function or class method that will run after every command.
+  
+  <pre class="brush: php;"> 
+    DB::$success_handler = true; // echo out each SQL command being run, and the runtime
+    $results = DB::query("SELECT * FROM accounts WHERE password=%s", 'hello'); // some command
+    
+    DB::$success_handler = 'my_success_handler'; // run this function after each successful command
+    function my_success_handler($params) {
+      echo "Command: " . $params['query'] . "<br>\n";
+      echo "Time To Run It: " . $params['runtime'] . " (milliseconds)<br>\n";
+    }
+    $results = DB::query("SELECT * FROM accounts"); // some command
+    
+    class Success {
+      public static function static_success_handler() {
+        echo "Command: " . $params['query'] . "<br>\n";
+        echo "Time To Run It: " . $params['runtime'] . " (milliseconds)<br>\n";
+      }
+      
+      public function success_handler() {
+        echo "Command: " . $params['query'] . "<br>\n";
+        echo "Time To Run It: " . $params['runtime'] . " (milliseconds)<br>\n";
+      }
+    }
+    
+    // use a static class method as an success handler
+    DB::$success_handler = array('Success', 'static_success_handler'); 
+    
+    // use an object method as an success handler
+    $my_object = new Success();
+    DB::$success_handler = array($my_object, 'success_handler');
+    
+    DB::$success_handler = false; // disable success handler
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_param_char">DB::$param_char</h2>
+<div class="indent">
+  Set this to the character or string that will preceed query parameters. The default is '%'.
+  <pre class="brush: php;">
+    // don't want the DATE_FORMAT string to be evaluated by MeekroDB
+    // pass it directly to MySQL as written instead, and use ##i to refer
+    // to the MeekroDB 'integer' (which is normally %i)
+    DB::$param_char = '##';
+    $row = DB::queryFirstRow( "SELECT DATE_FORMAT( c.sent, '%b %d %h:%i %p' ) 
+      FROM `call` c WHERE pk=##i", 4 );
+    
+    DB::$param_char = '%'; // revert to normal behavior
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_usenull">DB::$usenull</h2>
+<div class="indent">
+  Set this to <tt>false</tt> to have insert/replace/update/delete replace null variables with empty string.
+  <br>Use this if your MySQL columns are set as NOT NULL. Defaults to <tt>true</tt>.
+  <pre class="brush: php;">
+    DB::$usenull = false;
+    DB::insert('accounts', array(
+      'username' => 'Joe',
+      'password' => null // will be set to empty string
+    ));
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_nested_transactions">DB::$nested_transactions (MySQL 5.5 only)</h2>
+<div class="indent">
+  Set to <tt>true</tt> to enable nested transactions (it is disabled by default). 
+  You can then use <tt>DB::startTransaction()</tt>
+  from within a transaction to start another one. This relies internally on 
+  <a href="http://dev.mysql.com/doc/refman/5.5/en/savepoint.html">MySQL SAVEPOINT</a>.
+  <pre class="brush: php;">
+  DB::$nested_transactions = true;
+  
+  $depth = DB::startTransaction();
+  echo "We are now " . $depth . " transactions deep.\n"; // 1
+  DB::query("UPDATE accounts SET weight=%i WHERE username=%s", 150, 'Joe');
+  
+  $depth = DB::startTransaction();
+  echo "We are now " . $depth . " transactions deep.\n"; // 2
+  DB::query("UPDATE accounts SET weight=%i WHERE username=%s", 160, 'Joe');
+  $depth = DB::rollback(); // rollback just the inner transaction
+  echo "We are now " . $depth . " transactions deep.\n"; // 1
+  
+  $depth = DB::commit(); // commit the outer transaction
+  echo "We are now " . $depth . " transactions deep.\n"; // 0
+  
+  $weight = DB::queryFirstField("SELECT weight FROM accounts WHERE username=%s", 'Joe');
+  echo "Joe's weight is " . $weight . "\n"; // 150
+  </pre>
+  
+  You can check how many transactions are open by calling <tt>DB::transactionDepth()</tt>, or
+  checking return values from <tt>DB::startTransaction()</tt>, <tt>DB::commit()</tt>, and <tt>DB::rollback()</tt>.
+  <pre class="brush: php;">
+  DB::$nested_transactions = true;
+  
+  DB::startTransaction();
+  $depth = DB::startTransaction();
+  // $depth is 2
+  
+  $depth = DB::transactionDepth();
+  // $depth is still 2
+  </pre>
+  
+  You can rollback or commit all active transactions by passing <tt>true</tt> to 
+  <tt>DB::commit()</tt> or <tt>DB::rollback()</tt>.
+  <pre class="brush: php;">
+  DB::$nested_transactions = true;
+  
+  DB::startTransaction();
+  DB::startTransaction();
+  $depth = DB::transactionDepth(); // $depth is 2
+  
+  DB::commit(true);
+  $depth = DB::transactionDepth(); // $depth is 0
+  </pre>
+  
+</div>
+
+<h2 class="alt" id="anchor_query">DB::query()</h2>
+<div class="indent">
+  The first parameter is a query string with placeholders variables. Following that, you must have an additional parameter
+  for every placeholder variable.
+  
+  <br><br>If you need to refer to a specific parameter, rather than just getting them in the order that they were passed in,
+  you can put a number after the placeholder. The first parameter passed will have number 0. You can even re-use the same
+  parameter multiple times!
+  
+  <br><br>You can also pass in an array of named parameters. These will be accessed through placeholders of the form
+  <tt>%s_somename</tt>, <tt>%i_somenumber</tt>, and the like.
+  
+  <br><br>The <tt>%?</tt> variable is unique, since it will figure out what to do from the data type. Strings, integers, and doubles
+  will be escaped appropriately. Arrays will be transformed into lists that you can use with MySQL's <tt>IN</tt>. Arrays of arrays
+  will become comma-separated () lists that can be used to INSERT multiple rows at once. Associative arrays will become lists of
+  the form <tt>`key1`='val1',`key2`='val2'</tt> that can be used with MySQL's UPDATE. 
+  
+  <table>
+    <tr>
+      <th colspan=2>Placeholder Variables</th>
+    </tr>
+    <tr><td>%s</td><td>string</td></tr>
+    <tr><td>%i</td><td>integer</td></tr>
+    <tr><td>%d</td><td>decimal/double</td></tr>
+    <tr><td>%t</td><td>timestamp (can be instance of <a href="http://php.net/manual/en/class.datetime.php">DateTime</a> or string accepted by <a href="http://php.net/manual/en/function.strtotime.php">strtotime</a>)</td></tr>
+    <tr><td>%?</td><td>any data type (including arrays) -- will automatically do the right thing</td></tr>
+    <tr><td>%ss</td><td>search string (string surrounded with % for use with LIKE)</td></tr>
+    <tr style="color: red;"><td>%b</td><td>backticks (can be dangerous with user-supplied data -- BE CAREFUL)</td></tr>
+    <tr style="color: red;"><td>%l</td><td>literal (no escaping or parsing of any kind -- BE CAREFUL)</td></tr>
+    
+    <tr><td>%ls</td><td>list of strings (array)</td></tr>
+    <tr><td>%li</td><td>list of integers</td></tr>
+    <tr><td>%ld</td><td>list of decimals/doubles</td></tr>
+    <tr><td>%lt</td><td>list of timestamps</td></tr>
+    <tr style="color: red;"><td>%lb</td><td>list of backticks (can be dangerous with user-supplied data -- BE CAREFUL)</td></tr>
+    <tr style="color: red;"><td>%ll</td><td>list of literals (no escaping or parsing of any kind -- BE CAREFUL)</td></tr>
+  </table>
+  
+  <B>Return:</B> Returns an array of associative arrays. If your query produced no results, you get an empty array.
+  
+  <pre class="brush: php;">
+    // no placeholders
+    DB::query("SELECT * FROM tbl");
+    
+    // string, integer, and decimal placeholders
+    DB::query("SELECT * FROM tbl WHERE name=%s AND age > %i AND height <= %d", $name, 15, 13.75);
+    
+    // use the parameter number to refer to parameters out of order
+    DB::query("SELECT * FROM tbl WHERE name=%s2 AND age > %i0 AND height <= %d1", 15, 13.75, $name);
+    
+    // use named parameters
+    DB::query("SELECT * FROM tbl WHERE name=%s_name AND age > %i_age AND height <= %d_height", 
+      array(
+        'name' => $name,
+        'age' => 15,
+        'height' => 13.75
+      )
+    );
+    
+    // use %b and %? to construct an UPDATE
+    // also use timestamp -- you can do this with the %t parameter, too
+    DB::query("UPDATE %b0 SET %?2 WHERE id=%i1", 'tbl', 5, 
+      array(
+        'age' => 7,
+        'name' => $name,
+        'timestamp' => new DateTime("now")
+      )
+    );
+    
+    // list of strings and list of integers placeholders
+    $results = DB::query("SELECT * FROM tbl WHERE name IN %ls AND age NOT IN %li", array('John', 'Bob'), array(12, 15));
+    
+    // using the results from the last query
+    // you get an array of associative arrays, so you can interate over the rows
+    // with foreach
+    foreach ($results as $row) {
+      echo "Name: " . $row['name'] . "\n";
+      echo "Age: " . $row['age'] . "\n";
+      echo "Height: " . $row['height'] . "\n";
+      echo "-------------\n";
+    }
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_queryfirstrow">DB::queryFirstRow()</h2>
+<div class="indent">
+  Retrieve the first row of results for the query, and return it as an associative array. If the query returned no rows,
+  this returns null.
+  
+  <pre class="brush: php;">
+    // get information on the account with the username Joe
+    $account = DB::queryFirstRow("SELECT * FROM accounts WHERE username=%s", 'Joe');
+    echo "Username: " . $account['username'] . "\n"; // will be Joe, obviously
+    echo "Password: " . $account['password'] . "\n";
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_queryfirstlist">DB::queryFirstList()</h2>
+<div class="indent">
+  Retrieve the first row of results for the query, and return it as a numbered index (non-associative) array.
+  If the query returned no rows, this returns null.
+  
+  <pre class="brush: php;">
+    // get information on the account with the username Joe
+    list($username, $password) = DB::queryFirstList("SELECT username, password FROM accounts WHERE username=%s", 'Joe');
+    echo "Username: " . $username . "\n"; // will be Joe, obviously
+    echo "Password: " . $password . "\n";
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_queryfirstcolumn">DB::queryFirstColumn()</h2>
+<div class="indent">
+  Retrieve the first column of results for the query, and return it as a regular array. If the query returned no rows,
+  this returns an empty array.
+  
+  <pre class="brush: php;">
+    // get a list of DISTINCT usernames in the accounts table (skip duplicates, if any)
+    $usernames = DB::queryFirstColumn("SELECT DISTINCT username FROM accounts");
+    foreach ($usernames as $username) {
+      echo "Username: " . $username . "\n";
+    }
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_queryonecolumn">DB::queryOneColumn()</h2>
+<div class="indent">
+  Retrieve the requested column of results from the query, and return it as a regular array. If the query returned no rows,
+  or the requested column isn't in the result set, this returns an empty array.
+  
+  <pre class="brush: php;">
+    // get a list of ALL usernames in the accounts table
+    $usernames = DB::queryOneColumn('username', "SELECT * FROM accounts");
+    foreach ($usernames as $username) {
+      echo "Username: " . $username . "\n";
+    }
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_queryfirstfield">DB::queryFirstField()</h2>
+<div class="indent">
+  Get the contents of the first field from the first row of results, and return that. If no rows were returned by the query,
+  this returns null.
+  
+  <pre class="brush: php;">
+    // get Joe's password and print it out 
+    $joePassword = DB::queryFirstField("SELECT password FROM accounts WHERE username=%s", 'Joe');
+    echo "Joe's password is: " . $joePassword . "\n";
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_queryonefield">DB::queryOneField()</h2>
+<div class="indent">
+  Get the contents of the requested field from the first row of results, and return that. If no rows were returned by the query,
+  this returns null.
+  
+  <pre class="brush: php;">
+    // get Joe's password and print it out 
+    $joePassword = DB::queryOneField('password', "SELECT * FROM accounts WHERE username=%s", 'Joe');
+    echo "Joe's password is: " . $joePassword . "\n";
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_queryfullcolumns">DB::queryFullColumns()</h2>
+<div class="indent">
+  Like DB::query(), except the keys for each associative array will be in the form <tt>TableName.ColumnName</tt>. Useful
+  if you're joining several tables, and they each have an id field.
+  
+  <pre class="brush: php;">
+    $joe = DB::queryFullColumns("SELECT * FROM accounts WHERE username=%s", 'Joe');
+    print_r($joe);
+    
+    /*
+      Returns something like:
+      Array
+      (
+          [accounts.id] => 3
+          [accounts.username] => Joe
+          [accounts.password] => whatever
+      )
+    */
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_queryraw">DB::queryRaw()</h2>
+<div class="indent">
+  Like DB::query(), except it returns a standard MySQLi_Result object instead of an array of associative arrays. This is intended
+  for situations where the result set is huge, and PHP's memory is not enough to store the whole thing all at once.
+  
+  <pre class="brush: php;">
+    $mysqli_result = DB::queryRaw("SELECT * FROM accounts WHERE username=%s", 'Joe');
+    $row = $mysqli_result->fetch_assoc();
+    echo "Joe's password is: " . $row['password'] . "\n";
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_insert">DB::insert() / DB::replace()</h2>
+<div class="indent">
+  Either INSERT or REPLACE a row into a table. You can use DB::sqleval() to force
+  something to be passed directly to MySQL and not escaped. <i>DB::sqleval() does
+  nothing on its own, outside of the insert/replace/update/delete commands.</i>
+  
+  <br>You may insert multiple rows at once by passing an array of associative arrays.
+  
+  <pre class="brush: php;">
+    // insert a new account
+    DB::insert('accounts', array(
+      'username' => 'Joe',
+      'password' => 'hello'
+    ));
+    
+    // change Joe's password (assuming username is a primary key)
+    DB::replace('accounts', array(
+      'username' => 'Joe',
+      'password' => 'asd254890s'
+    ));
+    
+    // use DB::sqleval() to pass things directly to MySQL
+    // sqleval() supports the same parameter structure as query()
+    DB::insert('accounts', array(
+      'username' => 'Joe',
+      'password' => 'hello',
+      'data' => DB::sqleval("REPEAT('blah', %i)", 4), // REPEAT() is evaluated by MySQL
+      'time' => DB::sqleval("NOW()") // NOW() is evaluated by MySQL
+    ));
+    
+    // insert two rows at once
+    $rows = array();
+    $rows[] = array(
+      'username' => 'Frankie',
+      'password' => 'abc'
+    );
+    $rows[] = array(
+      'username' => 'Bob',
+      'password' => 'def'
+    );
+    DB::insert('accounts', $rows);
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_insertignore">DB::insertIgnore()</h2>
+<div class="indent">
+  Works like INSERT, except it does an INSERT IGNORE statement. Won't give a MySQL error if the primary key
+  is already taken.
+  
+  <pre class="brush: php;">
+  // insert new account, don't throw an error if primary key id is already taken
+  DB::insertIgnore('accounts', array(
+    'id' => 5, //primary key
+    'username' => 'Joe',
+    'password' => 'hello'
+  ));
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_insertupdate">DB::insertUpdate()</h2>
+<div class="indent">
+  Similar to INSERT, except it does an 
+  <a href="http://dev.mysql.com/doc/refman/5.0/en/insert-on-duplicate.html">INSERT ... ON DUPLICATE KEY UPDATE</a>. 
+  After the usual insert syntax, you can specify one
+  of three things: a query-like string with the update component, a second associative array with the keys and values to update,
+  or nothing, in which case the INSERT associative array gets re-used.
+  
+  <pre class="brush: php;">
+  // insert new account, if id 5 is already taken
+  // then change Joe's password to goodbye instead
+  DB::insertUpdate('accounts', array(
+    'id' => 5, //primary key
+    'username' => 'Joe',
+    'password' => 'hello'
+  ), 'password=%s', 'goodbye');
+  
+  // same as above
+  DB::insertUpdate('accounts', array(
+    'id' => 5, //primary key
+    'username' => 'Joe',
+    'password' => 'hello'
+  ), array(
+    'password' => 'goodbye'
+  ));
+  
+  // insert new account, if id 5 is taken then the username and password fields
+  // will be set to 'Joe' and 'hello' respectively and all other fields ignored
+  // this is a bit like REPLACE INTO, except we leave any other columns in the table
+  // untouched
+  DB::insertUpdate('accounts', array(
+    'id' => 5, //primary key
+    'username' => 'Joe',
+    'password' => 'hello'
+  ));
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_update">DB::update()</h2>
+<div class="indent">
+  Run an UPDATE command by specifying an array of changes to make, and a WHERE component. The WHERE component
+  can have parameters in the same style as the query() command. As with insert() and replace(), you can use
+  DB::sqleval() to pass a function directly to MySQL for evaluation.
+  
+  <pre class="brush: php;">
+  // change Joe's password
+  DB::update('accounts', array(
+    'password' => 'sdfdd'
+    ), "username=%s", 'Joe');
+  
+  // set Joe's password to "joejoejoe"
+  // WARNING: Passing user-submitted data to sqleval() will probably create a security flaw!!
+  DB::update('accounts', array(
+    'password' => DB::sqleval("REPEAT('joe', 3)")
+    ), "username=%s", 'Joe');
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_delete">DB::delete()</h2>
+<div class="indent">
+  Run the MySQL DELETE command with the given WHERE conditions.
+  
+  <pre class="brush: php;">
+  // delete Joe's account
+  DB::delete('accounts', "username=%s", 'Joe');
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_insertid">DB::insertId()</h2>
+<div class="indent">
+  Returns the auto incrementing ID for the last insert statement. 
+  The insert could have been done through DB::insert() or DB::query().
+  
+  <pre class="brush: php;">
+    // insert a new account
+    DB::insert('accounts', array(
+      'id' => 0, // auto incrementing column
+      'username' => 'Joe',
+      'password' => 'hello'
+    ));
+    
+    $joe_id = DB::insertId(); // which id did it choose?!? tell me!!
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_count">DB::count()</h2>
+<div class="indent">
+Counts the number of rows returned by the last query. Ignores queries done with DB::queryFirstRow() and DB::queryFirstField().
+
+  <pre class="brush: php;"> 
+    DB::query("SELECT * FROM accounts WHERE password=%s", 'hello');
+    $counter = DB::count();
+    echo $counter . " people are using hello as their password!!\n";
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_affectedrows">DB::affectedRows()</h2>
+<div class="indent">
+  Returns the number of rows changed by the last update statement. That statement could have been run through
+  DB::update() or DB::query().
+  
+  <pre class="brush: php;"> 
+    // give a better password to everyone who is using hello as their password
+    DB::query("UPDATE accounts SET password=%s WHERE password=%s", 'sdfwsert4rt', 'hello');
+    $counter = DB::affectedRows();
+    echo $counter . " people just got their password changed!!\n";
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_debugmode">DB::debugMode()</h2>
+<div class="indent">
+  An alias for <a href="/docs.php#anchor_success_handler">DB::$success_handler</a>.
+  
+  <pre class="brush: php;"> 
+    DB::debugMode(); // echo out each SQL command being run, and the runtime
+    $results = DB::query("SELECT * FROM accounts WHERE password=%s", 'hello'); // some command
+    
+    DB::debugMode('my_debugmode_handler'); // run this function after each successful command
+    function my_debugmode_handler($params) {
+      echo "Command: " . $params['query'] . "<br>\n";
+      echo "Time To Run It: " . $params['runtime'] . " (milliseconds)<br>\n";
+    }
+    $results = DB::query("SELECT * FROM accounts"); // some command
+    
+    DB::debugMode(false); // disable debug mode
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_usedb">DB::useDB()</h2>
+<div class="indent">
+  Switch to a different database.
+  
+  <pre class="brush: php;"> 
+    DB::useDB('my_other_database');
+    $result = DB::query("SELECT * FROM my_table");
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_transaction">DB::startTransaction() / DB::commit() / DB::rollback()</h2>
+<div class="indent">
+These are merely shortcuts for the three standard transaction commands: START TRANSACTION, COMMIT, and ROLLBACK.
+<br><br>
+When <a href="#anchor_nested_transactions">DB::$nested_transactions</a> are enabled, these commands
+  can be used to have multiple layered transactions. Otherwise, running <tt>DB::startTransaction()</tt>
+  when a transaction is active will auto-commit that transaction and start a new one.
+  
+  <pre class="brush: php;"> 
+    // give a better password to everyone who is using hello as their password
+    // but ONLY do this if there are more than 3 such people
+    DB::startTransaction();
+    DB::query("UPDATE accounts SET password=%s WHERE password=%s", 'sdfwsert4rt', 'hello');
+    $counter = DB::affectedRows();
+    if ($counter > 3) {
+      echo $counter . " people just got their password changed!!\n";
+      DB::commit();
+    } else {
+      echo "No one got their password changed!\n";
+      DB::rollback();
+    }
+  </pre>
+  
+  
+
+</div>
+
+<h2 class="alt" id="anchor_tablelist">DB::tableList()</h2>
+<div class="indent">
+  Get an array of the tables in either the current database, or the requested one.
+  
+  <pre class="brush: php;"> 
+    $current_db_tables = DB::tableList();
+    $other_db_tables = DB::tableList('other_db');
+    
+    foreach ($other_db_tables as $table) {
+      echo "Table Name: $table\n";
+    }
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_columnlist">DB::columnList()</h2>
+<div class="indent">
+  Get an array of the columns in the requested table.
+  
+  <pre class="brush: php;"> 
+    $columns = DB::columnList('accounts');
+    
+    foreach ($columns as $column) {
+      echo "Column: $column\n";
+    }
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_disconnect">DB::disconnect()</h2>
+<div class="indent">
+  Drop any existing MySQL connections. If you run a query after this, it will automatically reconnect.
+  <br>Useful before running <a href="http://php.net/manual/en/function.pcntl-fork.php">pcntl_fork()</a>, or if
+  you're trying to conserve MySQL sockets for some weird reason.
+  
+  <pre class="brush: php;">
+  DB::disconnect(); // drop mysqli connection
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_get">DB::get()</h2>
+<div class="indent">
+  Return the underlying mysqli object.
+  
+  <pre class="brush: php;">
+  $mysqli = DB::get();
+  </pre>
+
+</div>
+
+<h2 class="alt" id="anchor_whereclause">new WhereClause()</h2>
+<div class="indent">
+  A helper class for building the WHERE part of an SQL string out of pieces. It has methods
+  <tt>add</tt>, <tt>addClause</tt>, <tt>negateLast</tt>, and <tt>negate</tt>, which are
+  demonstrated below.
+  
+  <pre class="brush: php;"> 
+    $where = new WhereClause('and'); // create a WHERE statement of pieces joined by ANDs
+    $where->add('username=%s', 'Joe');
+    $where->add('password=%s', 'mypass');
+    
+    // SELECT * FROM accounts WHERE (`username`='Joe') AND (`password`='mypass')
+    $results = DB::query("SELECT * FROM accounts WHERE %l", $where);
+    
+    $subclause = $where->addClause('or'); // add a sub-clause with ORs
+    $subclause->add('age=%i', 15);
+    $subclause->add('age=%i', 18);
+    $subclause->negateLast(); // negate the last thing added (age=18)
+    
+    // SELECT * FROM accounts WHERE (`username`='Joe') AND (`password`='mypass') AND ((`age`=15) OR (NOT(`age`=18)))
+    $results = DB::query("SELECT * FROM accounts WHERE %l", $where);
+      
+    $subclause->negate(); // negate this entire subclause
+    
+    // SELECT * FROM accounts WHERE (`username`='Joe') AND (`password`='mypass') AND (NOT((`age`=15) OR (NOT(`age`=18))))
+    $results = DB::query("SELECT * FROM accounts WHERE %l", $where);
+  </pre>
+</div>
+
+
+<h2 class="alt" id="anchor_meekrodb">new MeekroDB()</h2>
+<div class="indent">
+  All MeekroDB functions and variables can also be used in an object-oriented approach. We don't recommend this
+  because most projects don't need multiple database connections, and it's annoying to pass $db objects around all the time.
+  
+  <br><br>The MeekroDB() constructor accepts the parameters <tt>$host, $user, $pass, $dbName, $port, $encoding</tt>. You can omit
+  any or all of them, and any that are omitted will use either the value that was set for the static instance of MeekroDB,
+  or the defaults shown in the <a href="#anchor_variables">standard variables</a> section.
+  
+  <pre class="brush: php;"> 
+    DB::$user = 'my_database_user'; // configure MeekroDB like normal
+    DB::$password = 'my_database_password';
+    DB::$dbName = 'my_database_name';
+    
+    // ... (code passes)
+    $mdb = new MeekroDB(); // don't need to pass any config parameters
+                           // it'll just read them from the above
+    
+  </pre>
+  
+  If you want to configure your object instance of MeekroDB separately, you can. The parameters are the same
+  as described in the <a href="#anchor_variables">standard variables</a> section.
+  <pre class="brush: php;">$mdb = new MeekroDB($host, $user, $pass, $dbName, $port, $encoding);</pre>
+  
+  Once connected, you can run all the MeekroDB functions described in the documentation. You can also set all
+  the same parameters.
+  <pre class="brush: php;">
+    $row = $mdb->queryFirstRow("SELECT name, age FROM tbl WHERE name=%s LIMIT 1", 'Joe');
+    echo "Name: " . $row['name'] . "\n"; // will be Joe, obviously
+    
+    $mdb->param_char = '##';
+    $row2 = $mdb->queryFirstRow("SELECT name, age FROM tbl WHERE name=##s LIMIT 1", 'Frank');
+    echo "Name: " . $row2['name'] . "\n"; // will be Frank, obviously
+  </pre>
+  
+
+</div>
+
+<h2 class="alt" id="anchor_verticalslice">DBHelper::verticalSlice()</h2>
+<div class="indent">
+  This helper function operates on an array of associative arrays, such as the kind returned by <tt>DB::query()</tt>.
+  It lets you get a simple array of all the values for one column in the original array of associative arrays.
+  
+  <pre class="brush: php;">
+    $users = DB::query("SELECT name, age, address FROM users");
+    
+    $names = DBHelper::verticalSlice($users, 'name');
+    // Above line is equivalent to:
+    
+    foreach ($users as $user) {
+      $names[] = $user['name'];
+    }
+  </pre>
+  
+  It also accepts an optional third parameter, which lets you set keys for the indexes in the new array.
+  <pre class="brush: php;">
+    $users = DB::query("SELECT name, age, address FROM users");
+    
+    $ages = DBHelper::verticalSlice($users, 'age', 'name');
+    // Above line is equivalent to:
+    
+    $names = array();
+    foreach ($users as $user) {
+      $names[$user['name']] = $user['age'];
+    }
+  </pre>
+</div>
+
+<h2 class="alt" id="anchor_reindex">DBHelper::reIndex()</h2>
+<div class="indent">
+  This helper function operates on an array of associative arrays, such as the kind returned by <tt>DB::query()</tt>.
+  It re-formats the array with a column serving as the index.
+  
+  <br><br>In the example below, if there are two people named Frank, only one of them will be included.
+  
+  <pre class="brush: php;">
+    $users = DB::query("SELECT name, age, address FROM users");
+    
+    $users_by_name = DBHelper::reIndex($users, 'name');
+    $frank = $users_by_name['Frank']
+    echo "Frank's age is " . $frank['age'] . "\n"; // 15
+  </pre>
+  
+  You can index the associative arrays by multiple columns as well.
+  <pre class="brush: php;">
+    $users = DB::query("SELECT name, age, address FROM users");
+    
+    $users_by_name_and_age = DBHelper::reIndex($users, 'name', 'age');
+    $frank = $users_by_name_and_age['Frank']['15'];
+    echo "Frank's address is " . $frank['address'] . "\n";
+    }
+  </pre>
+</div>

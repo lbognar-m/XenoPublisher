@@ -1,0 +1,32 @@
+INDEPENDENT
+	works on almost every php environments with a basic server configuration
+SPEED
+	very simple but dynamic code, with ultra fast page loading speed and enterprise-level scalability
+
+===================================
+SEO
+	seo links redirect
+	option to combine/minify all scripts and style into one file (top and bottom includes support)
+PORTABILITY
+	portable config accross multiple environments
+GRANULAR USER ACCESS
+	user/roles/permissions system
+FLEXIBILITY
+	advanced hook system
+	support for shortcodes
+	dynamic script and style queueing system
+RESPONSIVE
+	client or server side mobile device detection
+FREIANDLY INTERFACE AND EASY TO USE
+	ability to automatically get updates for all exyentions and themes
+DEVELOPER-FRIENDLY STRUCTURE AND USEFUL HELPER FUNCTIONS
+	predefined form element validators both client and server sided
+	form builder with clean html output, support for 
+
+OTHER FEATURES
+	drupal-like status messages
+	page loading timer for testing and optimisation of code
+
+
+
+

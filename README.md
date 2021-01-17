@@ -1,2 +1,8 @@
-# XenoPublisher
-My own approach at a CMS
+XenoCMS features:
+- modularity
+- object oriented
+- clean structure
+- easy versioning of DB modifications
+
+====	HELP	==========
+DATABASE	http://meekro.com/docs.php
